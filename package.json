@@ -4,7 +4,7 @@
   "description": "",
   "bugs": {},
   "devDependencies": {
-    "eslint": "^5.15.3",
+    "eslint": "^5.16.0",
     "eslint-config-htmlacademy": "0.5.2",
     "eslint-config-prettier": "^3.6.0",
     "eslint-plugin-prettier": "^3.0.1",
