@@ -1,21 +1,45 @@
 {
-  "name": "task",
-  "version": "1.0.0",
-  "description": "",
-  "bugs": {},
-  "devDependencies": {
-    "eslint": "^5.16.0",
-    "eslint-config-htmlacademy": "0.5.2",
-    "eslint-config-prettier": "^3.6.0",
-    "eslint-plugin-prettier": "^3.0.1",
-    "prettier": "^1.16.4"
-  },
-  "scripts": {
-    "test": "eslint js/"
-  },
-  "author": "",
-  "license": "ISC",
-  "engines": {
-    "node": "8.11"
-  }
+	"name": "task",
+	"version": "1.0.0",
+	"description": "",
+	"dependencies": {},
+	"devDependencies": {
+		"eslint": "^5.16.0",
+		"eslint-config-htmlacademy": "0.5.2",
+		"eslint-config-prettier": "^4.1.0",
+		"eslint-plugin-prettier": "^3.0.1",
+		"htmlhint": "^0.11.0",
+		"husky": "^1.3.1",
+		"lint-staged": "^8.1.5",
+		"prettier": "^1.17.0",
+		"stylelint": "^10.0.0",
+		"stylelint-config-htmlacademy": "^0.1.3",
+		"stylelint-config-prettier": "^5.0.0",
+		"stylelint-order": "^2.2.1"
+	},
+	"scripts": {
+		"test": "eslint js/",
+		"style": "stylelint --fix css/",
+		"lint": "eslint js/ --fix",
+		"fix-styles": "prettier --write */*.css",
+		"stylelint": "stylelint --fix --config .stylelintrc-format.json *.scss"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged"
+		}
+	},
+	"lint-staged": {
+		"**/*.js": [
+			"node_modules/.bin/eslint --max-warnings=0",
+			"git add"
+		],
+		"**/*.scss": [
+			"stylelint --fix --config .stylelintrc-format.json",
+			"git add"
+		]
+	},
+	"engines": {
+		"node": "8.12"
+	}
 }
