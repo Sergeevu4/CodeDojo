@@ -32,41 +32,27 @@ function addTodoItem(evt) {
 	addInputElement.value = '';
 }
 
-// Создание Новой задачи
-function createTodoItem(inputText) {
-	const checkbox = document.createElement('input');
-	checkbox.type = 'checkbox';
-	checkbox.className = 'checkbox';
+	// * Функция создание Новой задачи
+	function createTodoItem(title) {
+		// импорт из utils.js функции createElement
+		const checkbox = window.createElement('input', { type: 'checkbox', className: 'checkbox' });
+		const label = window.createElement('label', { className: 'title' }, title);
+		const editInput = window.createElement('input', { type: 'text', className: 'textfield' });
+		const editButton = window.createElement('button', { className: 'edit' }, 'Изменить');
+		const deleteButton = window.createElement('button', { className: 'delete' }, 'Удалить');
+		const newListItem = window.createElement(
+			'li',
+			{ className: 'todo-item' },
+			checkbox,
+			label,
+			editInput,
+			editButton,
+			deleteButton
+		);
 
-	const label = document.createElement('label');
-	label.textContent = inputText;
-	label.className = 'title';
+		bindEvents(newListItem);
 
-	const editInput = document.createElement('input');
-	editInput.type = 'text';
-	editInput.className = 'textfield';
-
-	const editButton = document.createElement('button');
-	editButton.textContent = 'Изменить';
-	editButton.className = 'edit';
-
-	const deleteButton = document.createElement('button');
-	// Можно воспользоваться innerText
-	deleteButton.innerText = 'Удалить';
-	deleteButton.className = 'delete';
-
-	const listItem = document.createElement('li');
-	listItem.className = 'todo-item';
-
-	listItem.appendChild(checkbox);
-	listItem.appendChild(label);
-	listItem.appendChild(editInput);
-	listItem.appendChild(editButton);
-	listItem.appendChild(deleteButton);
-
-	bindEvents(listItem);
-
-	return listItem;
+		return newListItem;
 }
 
 // Навешивание обработчиков событий на элементы задачи li
