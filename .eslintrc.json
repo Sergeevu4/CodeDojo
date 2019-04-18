@@ -21,6 +21,7 @@
 				"ignoreReadBeforeAssign": true
 			}
 		],
+		"no-invalid-this": 0,
 		"linebreak-style": "off",
 		"arrow-parens": "off",
 		"object-curly-newline": "off",
