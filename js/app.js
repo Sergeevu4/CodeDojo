@@ -68,36 +68,6 @@
 		deleteButton.addEventListener('click', deleteTodoItem);
 	}
 
-	// ? Второй способ навешивания обработчиков
-	// eslint-disable-next-line no-unused-vars
-	function bindEvents2(todoItem) {
-		/*
-		Решение через живую коллекцию HTMLCollection,
-		Передавая внутрь функции в todoItem ul
-		const todoListElements = document.querySelector('#todo-list').children;
-		.children  HTMLCollection - является живой коллекцией, она изменяется даже послеопределения переменной
-		В отличии от querySelectorAll
-
-		Вызов функции происходит в момент события submit
-		bindEvents2(todoListElements);
-
-		И для первоначальной задачи в момент загрузки js
-	*/
-
-		Array.from(todoItem).forEach((element) => {
-			// checkbox Задачи
-			const checkbox = element.querySelector('.checkbox');
-			// Кнопка редактирования задачи
-			const editButton = element.querySelector('button.edit');
-			// Кнопка удаления задачи
-			const deleteButton = element.querySelector('button.delete');
-
-			checkbox.addEventListener('change', toggleTodoItem);
-			editButton.addEventListener('click', editTodoItem);
-			deleteButton.addEventListener('click', deleteTodoItem);
-		});
-	}
-
 	/*
 	# Внутри toggleTodoItem:
 		Можно воспользоваться evt.target, или деструктуризацией event ({target})
