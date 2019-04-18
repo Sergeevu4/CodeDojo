@@ -13,7 +13,6 @@
 	},
 	"extends": ["htmlacademy/es6", "prettier"],
 	"rules": {
-		"prettier/prettier": ["error"],
 		"prefer-const": [
 			"error",
 			{
