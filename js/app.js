@@ -91,7 +91,7 @@
 			Если нет:
 				Скрытому полу input присваивается введенный текс задачи, который
 				храниться в label и переименовывается кнопка.
-				После присваивается класс listItem(li) editing
+				После присваивается класс listItem(li) -> editing
 			Если да, происходит обратное действие и удаляется класс editing
 */
 
@@ -120,11 +120,11 @@
 	}
 
 	/*
-	# Внутри deleteTodoItem
-		можно удалить при помощи метода removeChild
-		const listItem = this.parentNode;
-		todoListElement.removeChild(listItem);
-*/
+		# Внутри deleteTodoItem
+			можно удалить при помощи метода removeChild
+			const listItem = this.parentNode;
+			todoListElement.removeChild(listItem);
+	*/
 
 	// * Функция Handler - удаления задачи
 	function deleteTodoItem() {
